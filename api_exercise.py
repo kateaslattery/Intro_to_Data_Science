@@ -10,6 +10,6 @@ def api_get_request(url):
     
     url = 'http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&api_key=**&format=json'
     
-    response = requests.get(url)
-    top_artists = json.loads(response.text)
-    return top_artists['topartists']['artist'][0]['name']
+    data = requests.get(url)
+    datas = json.loads(data)
+    return data['topartists']['artist'][0]['name']
