@@ -38,6 +38,8 @@ def mapper():
 
 mapper()
 
+import sys
+
 def reducer():
   
   aadhaar_generated = 0
@@ -50,6 +52,7 @@ def reducer():
       continue
       
     this_key, count = data
+    
     if old_key and old_key != this_key:
       print "{0}\t{1}".format(old_key, aadhaar_generated)
         aadhaar_generated = 0
